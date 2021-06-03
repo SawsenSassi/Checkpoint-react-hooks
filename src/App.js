@@ -1,10 +1,9 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState} from 'react'
 import Head from './components/Header'
 import List from './components/MovieList'
 import Add from './components/Modal'
 import { data } from './components/data'
-import Moviecard from './components/Moviecard'
-import { Button } from 'react-bootstrap'
+
 
 
 const App = () => {
@@ -15,7 +14,6 @@ const App = () => {
   const [desc, setDesc] = useState('')
   const [rating, setRating] = useState('')
   const[rateFilter,setRateFilter]=useState('')
-  const [starValue,setStarValue]=useState('')
   
   
   const addItems = (e) => {
@@ -39,6 +37,7 @@ const App = () => {
         setRateFilter={setRateFilter} movies={movies} setMovies={setMovies} ></Add>
 
       <List data={data} movies={movies} input={input} rateFilter={rateFilter}></List>
+
 
     </div>
   )

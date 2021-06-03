@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import {Form, Button,Modal } from 'react-bootstrap'
+import StarRatingComponent from 'react-star-rating-component';
 import '../App.css'
 
 
@@ -8,9 +9,13 @@ const Add = (props) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
     const [value, setValue] = useState('')
 
+
+    const onStarClick=(nextValue, prevValue, name)=> {
+        setValue(nextValue)
+        props.setRateFilter(nextValue)  
+      }
    
 
     
@@ -20,8 +25,13 @@ const Add = (props) => {
         <div>
              <div className='filter'>
              <div className='filterrate'>
-                                        
-               
+             <h4 className='tooltip' style={{fontWeight:'bold', color:'whitesmoke'}}className="mb-0"> Filter By rate if you want ! </h4>                          
+             <StarRatingComponent className='rating'
+                    name="rate1"
+                    starCount={5}
+                    value={value}
+                    onStarClick={onStarClick}
+                />
             </div>
             <div className='refresh'>
             <Button className='add' variant="info" onClick={handleShow}>Add Movie</Button>
@@ -47,7 +57,7 @@ const Add = (props) => {
                             <Form.Control onChange={(e) => props.setDesc(e.target.value)} type="text" placeholder="Description" />
                         </Form.Group>
                         <Form.Group controlId="formBasicPassword">
-                            <Form.Label>Rating ***</Form.Label>
+                            <Form.Label>Rating *****</Form.Label>
                             <Form.Control onChange={(e) => props.setRating(e.target.value)} type="text" placeholder="Rating" />
                         </Form.Group>
                     </Form>
