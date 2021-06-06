@@ -90,11 +90,27 @@ body{
 
 
 .filter{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
+ 
   
+ 
+} 
+.filter, .imag{
+  display: block;
+}
+.imag{
+  text-align: left;
+  padding-left:30px;
+}
+  
+
+
+
+.film{
+  text-align: center;
+  border-radius: 5%;
+ margin: 10px;
+ padding: 10px;
 
 
 }
@@ -103,8 +119,8 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
+}
 .add{
 
   border-radius: 15px;
@@ -134,15 +150,56 @@ body{
   font-weight: bolder;
 }
 
+.watch-btn {
+  display: block;
+  border: 1px solid #fe4141;
+  border-radius: 5px;
+  padding: 4px;
+  width: 120px;
+  cursor: pointer;
+}
+h3{
+  text-decoration: none;
+}
+.watch-btn:hover{
+  background-color: #fe4141;
 
-.refresh{
-  display: flex;
-  justify-content: space-between;
 }
 
-.refresh-button{
-  margin-left: 10px;
-  border-radius: 15px;
+.watch-btn:hover h3{
+  color: #e7e7e7;
+}
+.action-row {
   margin-top: 20px;
-  width: 160px;
+}
+.col2
+{margin: 0% 0.5% 0.5% 0.5%;
+padding: 1%;
+float: left;
+display: block;
+width: 47%;}
+
+.star{
+  font-size: larger;
+  font-weight: bolder;
+
+  margin-top: 0%;
+}
+
+
+.desc{
+  text-align: center;
+  margin-left: 50px;
+  width: 750px;
+ font-size: 20px;
+  border-radius: 10px;
+}
+
+.desc:hover{
+  box-shadow: 0 5px 10px 0 #1b2734;
+  background-color: rgb(248, 248, 248);
+} 
+.BackImg{
+  width: 100px;
+  text-align: left;
 }
